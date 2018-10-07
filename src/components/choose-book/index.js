@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 import {
   loadBooks
-} from '../redux/actions'
+} from '../../redux/actions'
 
 class ChooseBook extends Component {
   static propTypes = {

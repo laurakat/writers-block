@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 
-import EditBook from './components/edit-book'
-import ChooseBook from './components/choose-book'
-
+import {
+  ChooseBook,
+  EditBook,
+  EditPage
+} from './components'
 
 class App extends Component {
 
@@ -13,6 +15,7 @@ class App extends Component {
       <div>
         <Route exact path='/' component={ChooseBook} />
         <Route path="/edit-book/:bookId" component={EditBook} />
+        <Route path="/edit-page/:pageId" component={EditPage} />
       </div>
     </Router>
     )

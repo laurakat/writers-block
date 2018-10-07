@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom'
 
 import get from 'lodash/get'
 
-import '../styles/app.css';
+import '../../styles/app.css';
 
 import {
   getBookPages
-} from '../redux/actions'
+} from '../../redux/actions'
+
+import ChapterSection from './chapter-section'
 
 class EditBook extends Component {
   static propTypes = {
@@ -43,19 +45,9 @@ class EditBook extends Component {
           Object.keys(pagesByChapter).map(key => {
 
             return (
-              <div className='chapter-section'>
-                <div className='chapter-title'>{key}</div>
-                {pagesByChapter[key].map(page => {
-
-                  const link = `/edit-page/${page._id}`
-
-                  return (
-                    <div key={page._id}>
-                      <Link to={link}>{page.name}</Link>
-                    </div>
-                  )
-                })}
-              </div>
+              <ChapterSection
+                chapterTitle={key}
+                chapterPages={pagesByChapter[key]} />
             )
           })
         }
